@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <div style="text-align:center">
+            <h1>Welcome to Cobra Dashboard!</h1>
+        </div>
+        
+        <div>
+            <div class="animalList" >
+                    <% for (var c in cobra_from_templates) { %>
+                        <div style="border-bottom: solid 1px; padding: 5px; margin: 5px; width: 400px;">
+                            <h4><%= cobra_from_templates[c].name %></h4>
+                            <p>Details:</p>
+                            <p>This cobra has <%= cobra_from_templates[c].teeth %> teeth.</p>
+                        
+                            <div>
+                                <a href='/edit/<%= cobra_from_templates[c]._id%>' >Edit</a>
+                                <a href='/delete/<%= cobra_from_templates[c]._id%>'>Destroy this beast!'</a>
+                            </div>
+                        </div>        
+                    <% } %>
+            </div>  
+            <form action='/cobra/new'>
+                <input class="submit" type='submit' value='Add new animal'>
+            </form>
+        </div>
+    </body>
+</html>

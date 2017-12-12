@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <div style="text-align:center">
+            <h1>Edit this beast!</h1>
+        </div>
+        
+        <div class="animal" >
+            <% for(var x in edited_animal) { %> 
+            <form action='/edit/<%=edited_animal[x].id%>' method='post'>
+                <input type="text" name="name" value="<%= edited_animal[x].name%>">
+                <input type="number" name="teeth" value="<%= edited_animal[x].teeth%>">
+                <input class="submit" type='submit' value='Edit'>
+            </form>   
+            <% } %>
+        </div>  
+        
+
+    </body>
+</html>
